@@ -1,0 +1,1 @@
+#Montar as configs do spark otimizadas para streaming
