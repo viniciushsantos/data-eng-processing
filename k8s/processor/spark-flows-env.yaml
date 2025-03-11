@@ -1,0 +1,30 @@
+apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  name: teste-spark
+  namespace: processing  # Ajuste para o seu namespace no Kubernetes
+spec:
+  type: Python
+  mode: cluster
+  image: bitnami/spark:3.5.5-debian-12-r0
+  imagePullPolicy: Always
+  mainApplicationFile: "local:///opt/spark/scripts/teste_spark.py"
+  sparkVersion: "3.5.5"
+  restartPolicy:
+    type: OnFailure
+  driver:
+    cores: 1
+    coreLimit: "1200m"
+    memory: "512m"
+    labels:
+      version: 3.5.5
+    serviceAccount: spark
+  executor:
+    cores: 1
+    instances: 2
+    memory: "512m"
+    labels:
+      version: 3.5.5
+  deps:
+    files:
+      - local:///opt/spark/scripts/teste_spark.py  # Ajuste conforme necessário
