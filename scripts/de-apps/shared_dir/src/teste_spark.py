@@ -9,5 +9,7 @@ columns = ["Message"]
 
 df = spark.createDataFrame(data, columns)
 
-df.show()
+print("==== TESTING SPARK ON K8S ====")
+
+print(df.show())
 spark.stop()

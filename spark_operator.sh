@@ -16,6 +16,11 @@ if [ "$ENV_PROC" == "dev" ]; then
     --from-literal=password=TOKEN \
     -n spark-operator
 
+    # chave ssh criada especificamente para DEV
+    kubectl create secret generic github-ssh-key \
+    --from-file=id_rsa=/Users/viniciussantos/.ssh/id_rsa \
+    -n spark-operator
+
 elif [ "$ENV_PROC" == "prod" ]; then
 
     helm repo add spark-operator https://kubeflow.github.io/spark-operator
