@@ -10,8 +10,8 @@ spec:
   pythonVersion: "3"
   mode: cluster
   image: viniciusdossantos21/flow-processor:0.0.3
-  imagePullPolicy: IfNotPresent
-  mainApplicationFile: local:///opt/spark/de-apps/shared_dir/src/teste_spark.py
+  imagePullPolicy: Always
+  mainApplicationFile: local:///opt/spark/spark-processor/src/teste_spark.py 
   sparkVersion: 3.5.3
   driver:
     cores: 1
@@ -21,3 +21,4 @@ spec:
     instances: 2
     cores: 1
     memory: 512m
+

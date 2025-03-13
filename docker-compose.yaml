@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  spark-container:
+    image: viniciusdossantos21/flow-processor:0.0.3
+    container_name: spark-container
+    command: tail -f /dev/null
+    volumes:
+      - ~/Documents/GitHub/data-eng-processing/scripts:/opt/spark
+    environment:
+      - PYTHONPATH=/opt/spark/de-apps  
