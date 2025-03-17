@@ -13,3 +13,7 @@ if __name__ == "__main__":
     job = SparkJob()
     job.run()
 
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col
+
+

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package flowpb;
+
+message FlowRaw {
+
+    enum FlowType {
+        SFLOW = 0;
+        NETFLOW = 1;
+  }
+  
+  FlowType type = 1;
+  bytes data = 2;
+  uint64 time = 3;
+  uint64 host_name = 4;
+}

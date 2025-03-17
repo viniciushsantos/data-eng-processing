@@ -2,6 +2,11 @@ from pyspark.sql import SparkSession
 from pyspark import SparkConf
 
 class SparkSessionManager:
+    """
+    Author:         Vinícius Henrique dos Santos 
+    Date:           12/05/2025
+    Description:    This class has the main goal of configuring the SparkSesion with a batter performance for streaming
+    """
     _spark = None 
 
     @classmethod

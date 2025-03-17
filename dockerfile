@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y nano && rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONPATH=/opt/spark/spark-processor
 RUN echo "export PYTHONPATH=/opt/spark/spark-processor" >> /root/.bashrc
+RUN pip install --no-cache-dir protobuf
 
 USER spark 
 
